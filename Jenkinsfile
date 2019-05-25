@@ -9,7 +9,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Building ...'
+                sh 'mvn clean packages'
+            }
+            post {
+                seccess {
+                    echo 'Now Archiving ...'
+                    archiveArtifacts artifacts: '**/target/*.war'
+                }
             }
         }
 
