@@ -35,7 +35,7 @@ pipeline {
                 build job: 'deploy_to_prod'
             }
             post {
-                sucess {
+                success {
                     echo 'Code deployed to Production'
                 }
 
